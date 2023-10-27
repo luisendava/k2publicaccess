@@ -22,7 +22,10 @@
                     "name": "body",
                     "required": true,
                     "schema": {
-                        "$ref": "#/definitions/Payments"
+                         "type": "array",
+                          "items": {
+                            "$ref": "#/definitions/Payment"
+                        }
                     }
                   }
                 ],
