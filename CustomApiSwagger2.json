@@ -24,18 +24,24 @@
                     }
                 },
                 "responses": {
-                    "200": {
-                        "description": "error message",
-                        "schema": {
-                            "$ref": "#/definitions/success"
-                            }
-                        },
-                    "400": {
-                        "description": "message when payments is updated",
-                        "schema": {
-                            "$ref": "#/definitions/success"
-                        }
+                  "200": {
+                    "description": "Expected response to a valid request",
+                    "schema": {
+                      "$ref": "#/definitions/success"
                     }
+                  },
+                    "400": {
+                    "description": "Expected response to a valid request",
+                    "schema": {
+                      "$ref": "#/definitions/success"
+                    }
+                  },
+                  "default": {
+                    "description": "unexpected error",
+                    "schema": {
+                      "$ref": "#/definitions/success"
+                    }
+                  }
                 }
             }
         }
