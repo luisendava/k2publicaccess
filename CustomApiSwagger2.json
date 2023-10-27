@@ -1,6 +1,6 @@
 {
     "swagger": "2.0",
-    "host": "https://avidxchange-org2--ut.sandbox.my.salesforce.com",
+    "host": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com",
     "basePath": "/services/apexrest/",
     "schemes": [
         "https"
