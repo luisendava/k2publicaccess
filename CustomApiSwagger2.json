@@ -3,8 +3,7 @@
     "host": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com:443",
     "basePath": "/services/apexrest/",
     "schemes": [
-        "https",
-        "http"
+        "https"
     ],
     "paths": {
         "/NintexSFPayment": {
