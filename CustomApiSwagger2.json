@@ -25,12 +25,12 @@
                 },
                 "responses": {
                     "200": {
-                        "400": {
-                            "description": "error message",
-                            "schema": {
-                                "$ref": "#/definitions/success"
+                        "description": "error message",
+                        "schema": {
+                            "$ref": "#/definitions/success"
                             }
                         },
+                    "400": {
                         "description": "message when payments is updated",
                         "schema": {
                             "$ref": "#/definitions/success"
