@@ -3,7 +3,8 @@
     "host": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com:443",
     "basePath": "/services/apexrest/",
     "schemes": [
-        "https"
+        "https",
+        "http"
     ],
     "paths": {
         "/NintexSFPayment": {
@@ -15,77 +16,74 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": {
+                "parameters": [
+                  {
                     "in": "body",
                     "name": "body",
                     "required": true,
                     "schema": {
-                        "$ref": "#/definitions/Payment"
-                    }
-                },
-                "responses": {
-                  "200": {
-                    "description": "Expected response to a valid request",
-                    "schema": {
-                      "$ref": "#/definitions/success"
-                    }
-                  },
-                    "400": {
-                    "description": "Expected response to a valid request",
-                    "schema": {
-                      "$ref": "#/definitions/success"
-                    }
-                  },
-                  "default": {
-                    "description": "unexpected error",
-                    "schema": {
-                      "$ref": "#/definitions/success"
+                        "$ref": "#/definitions/Payments"
                     }
                   }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/success"
+                            }
+                        },
+                    "400": {
+                        "description": "message when payments is updated",
+                        "schema": {
+                            "$ref": "#/definitions/success"
+                        }
+                    }
                 }
             }
         }
     },
     "definitions": {
-                "Payment": {
-                    "type": "object",
-                    "required": [
-                        "id"
-                    ],
-                    "properties": {
-                        "Id": {
-                            "type": "string"
-                        },
-                        "Payment_Status__c": {
-                            "type": "string"
-                        },
-                        "Payment_ONST_Approved_Date__c": {
-                            "type": "date"
-                        },
-                        "Payment_ONST_Check__c": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "Payments": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Payment"
-                    }
-                },
-                "success": {
-                    "type": "object",
-                    "Properties": {
-                        "status": {
-                            "type": "string"
-                        },
-                        "message": {
-                            "type": "string"
-                        },
-                        "errorMessages": {
-                            "type": "array"
-                        }
-                    }
-                }
-            }
+       "Payment": {
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "Payment_Status__c": {
+          "type": "string"
+        },
+        "Payment_ONST_Approved_Date__c": {
+          "type": "string", 
+          "format": "date-time"
+        },
+        "Payment_ONST_Check__c": {
+            "type": "string"
+        }
+      }
+    },
+    "Payments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Payment"
+      }
+    },
+    "success": {
+      "type": "object",
+      "Properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+              "type": "string"
+          },
+          "errorMessages": {
+              "type": "array"
+          }
+      }
+    }
+  }
 }
