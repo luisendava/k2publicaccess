@@ -1,9 +1,10 @@
 {
-    "swagger": "2.0"
-    "host": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com",
+    "swagger": "2.0",
+    "host": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com:443",
     "basePath": "/services/apexrest/",
     "schemes": [
-        "https"
+        "https",
+        "http"
     ],
     "paths": {
         "/NintexSFPayment": {
