@@ -69,6 +69,7 @@
       "required": [
         "id"
       ],
+      "type": "object",
       "properties": {
         "id": {
           "type": "integer",
@@ -94,7 +95,7 @@
     },
     "success": {
       "type": "object",
-      "Properties": {
+      "properties": {
           "status": {
             "type": "string"
           },
