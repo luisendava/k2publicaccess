@@ -36,50 +36,65 @@
                             "$ref": "#/definitions/success"
                         }
                     }
+                },"security": [
+                  {
+                    "petstore_auth": [
+                      "write:pets",
+                      "read:pets"
+                    ]
+                  }
+                ]
+            }
+        }
+    }, "securityDefinitions": {
+    "salesforceApi_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://test.salesforce.com/services/oauth2/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "write:Payments": "modify Payments in sf",
+      }
+    },
+    "definitions": {
+        "Payment": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Payment_Status__c": {
+                    "type": "string"
+                },
+                "Payment_ONST_Approved_Date__c": {
+                    "type": "date"
+                },
+                "Payment_ONST_Check__c": {
+                    "type": "string"
+                }
+            }
+        },
+        "Payments": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Payment"
+            }
+        },
+        "success": {
+            "type": "object",
+            "Properties": {
+                "status": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "errorMessages": {
+                    "type": "array"
                 }
             }
         }
-    },
-    "definitions": {
-                "Payment": {
-                    "type": "object",
-                    "required": [
-                        "id"
-                    ],
-                    "properties": {
-                        "Id": {
-                            "type": "string"
-                        },
-                        "Payment_Status__c": {
-                            "type": "string"
-                        },
-                        "Payment_ONST_Approved_Date__c": {
-                            "type": "date"
-                        },
-                        "Payment_ONST_Check__c": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "Payments": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Payment"
-                    }
-                },
-                "success": {
-                    "type": "object",
-                    "Properties": {
-                        "status": {
-                            "type": "string"
-                        },
-                        "message": {
-                            "type": "string"
-                        },
-                        "errorMessages": {
-                            "type": "array"
-                        }
-                    }
-                }
-            }
+    }
 }
