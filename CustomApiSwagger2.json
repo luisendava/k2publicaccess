@@ -1,10 +1,9 @@
 {
     "swagger": "2.0",
-    "host": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com:443",
-    "basePath": "/services/apexrest/",
+    "host": "avidxchange-org2--org2ut.sandbox.my.salesforce.com:443",
+    "basePath": "/services/apexrest",
     "schemes": [
-        "https",
-        "http"
+        "https"
     ],
     "paths": {
         "/NintexSFPayment": {
@@ -42,9 +41,27 @@
                             "$ref": "#/definitions/success"
                         }
                     }
-                }
+                },
+                "security": [
+                  {
+                    "oAuth2AuthCode": [
+                      "full"
+                    ]
+                  }
+                ]
             }
         }
+    },
+    "securityDefinitions":{
+      "oAuth2AuthCode": {
+        "type":"oauth2",
+        "flows":"authorizationCode",
+        "authorizationUrl":"https://avidxchange-org2--org2ut.sandbox.my.salesforce.com/services/oauth2/authorize",
+        "tokenUrl": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com/services/oauth2/token",
+        "scopes": {
+          "full": "modify payments"
+        }
+      }
     },
     "definitions": {
        "Payment": {
@@ -54,8 +71,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "Payment_Status__c": {
           "type": "string"
