@@ -101,8 +101,8 @@
             "scopes": {
                 "user": "user allowed to update setting"
             },
-            "authorizationUrl": "https://example.com/authorize",
-            "tokenUrl": "https://example.com/access_token"
+            "authorizationUrl": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com/services/oauth2/authorize",
+            "tokenUrl": "https://avidxchange-org2--org2ut.sandbox.my.salesforce.com/services/oauth2/token"
         }
     },
     "security": [
@@ -110,7 +110,7 @@
             "NintextOauth2": []
         }
     ],
-    "basePath": "/services/apexrest/",
+    "basePath": "/services/apexrest",
     "tags": [
         {
             "name": "Nintex"
