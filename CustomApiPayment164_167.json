@@ -97,7 +97,7 @@
     "securityDefinitions": {
         "NintextOauth2": {
             "type": "oauth2",
-            "flow": "accessCode",
+            "flow": "implicit",
             "scopes": {
                 "user": "user allowed to update setting"
             },
