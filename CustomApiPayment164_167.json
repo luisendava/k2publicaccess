@@ -101,8 +101,8 @@
             "scopes": {
                 "user": "user allowed to update setting"
             },
-            "authorizationUrl": "test.salesforce.com/services/oauth2/authorize",
-            "tokenUrl": "test.salesforce.com/services/oauth2/token"
+            "authorizationUrl": "http//:test.salesforce.com/services/oauth2/authorize",
+            "tokenUrl": "http//:test.salesforce.com/services/oauth2/token"
         }
     },
     "security": [
