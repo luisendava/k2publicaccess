@@ -97,11 +97,10 @@
     "securityDefinitions": {
         "NintextOauth2": {
             "type": "oauth2",
-            "flow": "implicit",
+            "flow": "clientCredentials ",
             "scopes": {
                 "user": "user allowed to update setting"
             },
-            "authorizationUrl": "https://test.salesforce.com/services/oauth2/authorize",
             "tokenUrl": "https://test.salesforce.com/services/oauth2/token"
         }
     },
